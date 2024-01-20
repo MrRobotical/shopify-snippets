@@ -1,4 +1,4 @@
-/*Add the following method under the onVariantChange function*/
+/*Add the following method under the onVariantChange function in the global.js file*/
 this.updateVariantDetails();
 
 
