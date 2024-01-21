@@ -1,0 +1,79 @@
+<div style="background-image: linear-gradient(to right, {{ section.settings.start_color }}, {{ section.settings.end_color }}); -webkit-background-clip: text; color: transparent; font-size: {{ section.settings.font_size }}px;text-align: {{ section.settings.title_alignment }};">
+  {{ section.settings.header_title }}
+</div>
+
+<style>
+   {{section.settings.font_family | font_face: font_display: 'swap'}}
+   .gradiant_title * {
+     font-family: {{ section.settings.font_family.family}};
+ }
+</style>
+
+
+{% schema %}
+{
+  "name": "Gradient Header",
+  "class": "gradiant_title",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Header Title",
+      "id": "header_title",
+      "default": "Your Title Here"
+    },
+    {
+  "type": "select",
+  "label": "Title Alignment",
+  "id": "title_alignment",
+  "options": [
+    {
+      "value": "center",
+      "label": "Center"
+    },
+    {
+      "value": "left",
+      "label": "Left"
+    },
+    {
+      "value": "right",
+      "label": "Right"
+    }
+  ],
+  "default": "center"
+},
+    {
+      "type": "color",
+      "label": "Start Color",
+      "id": "start_color"
+    },
+    {
+      "type": "color",
+      "label": "End Color",
+      "id": "end_color"
+    },
+    {
+      "type": "font_picker",
+      "label": "Font Family",
+      "id": "font_family",
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "label": "Font Size (px)",
+      "id": "font_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Gradient Header",
+      "category": "Custom"
+    }
+  ]
+}
+
+{% endschema %}
+
